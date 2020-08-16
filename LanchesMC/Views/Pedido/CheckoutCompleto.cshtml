@@ -1,0 +1,47 @@
+﻿@*<br />
+    <div class="container">
+        <div class="jumbotron">
+            <h2>@ViewBag.CheckoutCompletoMensagem</h2>
+
+            <div class="card">
+                <div class="card-body">
+                    <p>Cliente :  <strong> @ViewBag.Cliente</strong></p>
+                    <br />
+                    <p>Data do Pedido     : <strong> @ViewBag.DataPedido</strong></p>
+                    <br />
+                    <p>Número do Pedido   : <strong>@ViewBag.NumeroPedido</strong></p>
+                    <br />
+                    <p>Valor Total do Pedido: <strong>@ViewBag.TotalPedido</strong></p>
+                </div>
+            </div>
+
+        </div>
+    </div>*@
+
+@model Pedido
+
+<br />
+<br />
+<div class="container">
+    <div class="jumbotron">
+        <h2>@ViewBag.CheckoutCompletoMensagem</h2>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <p>Cliente: <strong>@Model.Nome</strong></p>
+            <p>Data do Pedido: <strong>@Model.PedidoEnviado</strong></p>
+            <p>Número do Pedido: <strong>@Model.PedidoId</strong></p>
+            <br />
+            @foreach (var item in Model.PedidoItens)
+            {
+                <img src="@item.Lanche.ImagemUrl" width="40" height="40" />
+                <p><strong>@item.Lanche.Nome</strong></p>
+                <p>Qtd: <strong>@item.Quantidade</strong></p>
+                <p>Valor unitário: <strong>@item.Lanche.Preco</strong></p>
+            }
+            <p>Valor Total do Pedido: <strong>@ViewBag.TotalPedido.ToString("c")</strong></p>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+@inject SignInManager<IdentityUser> SignInManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
+          method="post" class="navbar-left">
+        <span class="nav navbar-nav navbar-left" style="margin-top: 15px;">
+            <a href="javascript:document.getElementById('logoutForm').submit()" style="color:white">Sair</a>
+        </span>
+    </form>
+}
+else
+{
+    <span class="nav navbar-nav navbar-left" style="margin-top: 15px;">
+        <a class="nav-link text-light" asp-controller="Account" asp-action="Login" style="color:white">Sua Conta</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="nav-link text-light" asp-controller="Account" asp-action="Register" style="color:white">Registre-se</a>
+    </span>
+}

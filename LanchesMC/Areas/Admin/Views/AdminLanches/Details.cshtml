@@ -1,0 +1,70 @@
+﻿@model LanchesMC.Models.Lanche
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3 class="marginTop">Detalhes do lanche</h3>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoCurta)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoCurta)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DescricaoDetalhada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DescricaoDetalhada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImagemUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagemThumbnailUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImagemThumbnailUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsLanchePreferido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsLanchePreferido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmEstoque)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmEstoque)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.CategoriaId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.LancheId">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>

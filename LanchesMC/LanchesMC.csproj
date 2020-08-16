@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200805233025_MigracaoInicial.cs" />
+    <Compile Remove="Migrations\20200805233025_MigracaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200805233229_MigracaoInicial.cs" />
+    <Compile Remove="Migrations\20200805233229_MigracaoInicial.Designer.cs" />
+    <Compile Remove="Migrations\20200805234556_PopularTabelas.cs" />
+    <Compile Remove="Migrations\20200805234556_PopularTabelas.Designer.cs" />
+    <Compile Remove="Migrations\20200809155320_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809155320_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809155500_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809155500_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809155535_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809155535_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809155919_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809155919_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809160225_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809160225_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809160549_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809160549_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809193706_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809193706_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809193838_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809193838_Pedidos.Designer.cs" />
+    <Compile Remove="Migrations\20200809194134_Pedidos.cs" />
+    <Compile Remove="Migrations\20200809194134_Pedidos.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="ReflectionIT.Mvc.Paging" Version="4.0.0" />
+  </ItemGroup>
+
+</Project>

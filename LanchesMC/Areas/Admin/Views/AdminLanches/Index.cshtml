@@ -1,0 +1,86 @@
+﻿@*@model IEnumerable<LanchesMC.Models.Lanche>*@
+@model ReflectionIT.Mvc.Paging.PagingList<LanchesMC.Models.Lanche>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="marginTop">Lanches</h3>
+
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filtro"
+           value="@Model.RouteValue["Filter"]" />
+    <button type="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Procurar
+    </button>
+</form>
+
+Total de Lanches : @Model.TotalRecordCount
+<div>
+    <vc:pager paging-list="@Model"></vc:pager>
+</div>
+
+<p>
+    <a asp-action="Create">Criar Lanche</a>
+</p>
+
+<div class="row" style="font-weight: bold;">
+    <div class="col-xs-1">
+        @Html.SortableHeaderFor(model => model.Nome, "Nome")
+    </div>
+    <div class="col-xs-2">
+        @Html.DisplayNameFor(model => model.DescricaoCurta)
+    </div>
+    <div class="col-xs-2">
+        @Html.DisplayNameFor(model => model.DescricaoDetalhada)
+    </div>
+    <div class="col-xs-1">
+        Preço
+    </div>
+    <div class="col-xs-1">
+        @Html.DisplayNameFor(model => model.IsLanchePreferido)
+    </div>
+    <div class="col-xs-1">
+        Estoque
+    </div>
+    <div class="col-xs-1">
+        @Html.DisplayNameFor(model => model.Categoria)
+    </div>
+    <div class="col-xs-3">
+        &nbsp;
+    </div>
+</div>
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-xs-1">
+            @Html.DisplayFor(modelItem => item.Nome)
+        </div>
+        <div class="col-xs-2">
+            @Html.DisplayFor(modelItem => item.DescricaoCurta)
+        </div>
+        <div class="col-xs-2">
+            @Html.DisplayFor(modelItem => item.DescricaoDetalhada)
+        </div>
+        <div class="col-xs-1">
+            @Html.DisplayFor(modelItem => item.Preco)
+        </div>
+        <div class="col-xs-1">
+            @Html.DisplayFor(modelItem => item.IsLanchePreferido)
+        </div>
+        <div class="col-xs-1">
+            @Html.DisplayFor(modelItem => item.EmEstoque)
+        </div>
+        <div class="col-xs-1">
+            @Html.DisplayFor(modelItem => item.Categoria.CategoriaId)
+        </div>
+        <div class="col-xs-3">
+            <a asp-action="Edit" asp-route-id="@item.LancheId">Editar</a> |
+            <a asp-action="Details" asp-route-id="@item.LancheId">Detalhes</a> |
+            <a asp-action="Delete" asp-route-id="@item.LancheId">Excluir</a>
+        </div>
+    </div>
+}
+<div>
+    <vc:pager paging-list="@Model"></vc:pager>
+</div>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Relatório de Vendas";
+}
+
+<h3 class="marginTop">Relatório de Pedidos por Período</h3>
+
+<div class="row">
+    <div class="col-xs-4">
+        <form asp-action="RelatorioVendasSimples" style="margin-top: 30px;">
+                <div class="form-group">
+                    <label for="minDate" class="control-label">Data Inicial</label>
+                    <div>
+                        <input type="date" name="minDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maxDate" class="control-label">Data Final</label>
+                    <div>
+                        <input type="date" name="maxDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>

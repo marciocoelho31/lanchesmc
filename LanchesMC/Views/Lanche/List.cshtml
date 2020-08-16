@@ -1,0 +1,29 @@
+﻿@*@model IEnumerable<Lanche>*@
+@model LancheListViewModel
+
+@*<div><h2>Todos os Lanches</h2></div>*@
+<div style="margin-top: 30px;"><h2>@Model.CategoriaAtual</h2></div>
+
+<div class="row no-gutter">
+    @foreach (var lanche in Model.Lanches)
+    {
+        @*<div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="img-thumbnail">
+                <img src="@lanche.ImagemUrl" class="rounded mx-auto d-block" alt="" width="200" height="200" />
+            </div>
+            <div class="caption">
+                <h5 class="float-right">@lanche.Preco.ToString("c")</h5>
+                <h5>
+                    @lanche.Nome
+                </h5>
+                <p>@lanche.DescricaoCurta</p>
+            </div>
+        </div>*@
+
+        @*@Html.Partial("_LanchesResumo", lanche);  // descontinuado na versao 3.1 do NET Core *@
+
+        @*@await Html.PartialAsync("_LanchesResumo", lanche)  ou:  *@
+        <partial name="_LanchesResumo" for="@lanche" />
+
+    }
+</div>

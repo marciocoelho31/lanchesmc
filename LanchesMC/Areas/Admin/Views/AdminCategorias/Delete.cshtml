@@ -1,0 +1,31 @@
+﻿@model LanchesMC.Models.Categoria
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+    <h3 class="marginTop">Excluir Categoria</h3>
+
+    <h4>Você tem certeza de que quer excluir esta categoria?</h4>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoriaNome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CategoriaNome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CategoriaId" />
+        <input type="submit" value="Excluir" class="btn btn-default" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>
